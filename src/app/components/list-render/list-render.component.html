@@ -1,9 +1,35 @@
 <div class="class">
   <h2>Animais:</h2>
+  <p>Acrescentar um animal:</p>
+
+  <input
+    type="text"
+    name="nameAnimalAdd"
+    id="nameAnimalAdd"
+    placeholder="nome"
+    [(ngModel)]="newName"
+  />
+  <input
+    type="text"
+    name="typeAnimalAdd"
+    id="typeAnimalAdd"
+    placeholder="tipo"
+    [(ngModel)]="newType"
+  />
+  <input
+    type="number"
+    name="ageAnimalAdd"
+    id="ageAnimalAdd"
+    placeholder="idade"
+    [(ngModel)]="newAge"
+  />
+  <button (click)="saveNewAnimal()">salvar</button>
+
   <ul>
     <li *ngFor="let animal of animals">
       nome: {{ animal.name }} - Tipo: {{ animal.type }}
       <button (click)="showAge(animal)">show age</button>
+      <button (click)="removeAnimal(animal)">excluir</button>
     </li>
     <p *ngIf="animalDetails !== ''; else animalNotice">{{ animalDetails }}</p>
     <ng-template #animalNotice>

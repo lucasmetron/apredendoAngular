@@ -9,6 +9,8 @@ import { Parent2DataComponent } from './components/parent2-data/parent2-data.com
 import { DirectivesComponent } from './components/directives/directives.component';
 import { IfRenderComponent } from './components/if-render/if-render.component';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { EmiterComponent } from './components/emiter/emiter.component';
+import { ChangeNumberComponent } from './components/change-number/change-number.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { EventosComponent } from './components/eventos/eventos.component';
     DirectivesComponent,
     IfRenderComponent,
     EventosComponent,
+    EmiterComponent,
+    ChangeNumberComponent,
   ],
   imports: [
     BrowserModule,

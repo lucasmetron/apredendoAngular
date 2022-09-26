@@ -1,11 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Animal } from '../Animal';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class ListService {
-  constructor() {}
+  private apiUrl = 'http://localhost:3000/animals';
+  private apiUrlPosts = 'https://jsonplaceholder.typicode.com/posts';
+
+  constructor(private http: HttpClient) {}
 
   // normalmente seria uma requisição, mas isso é pra exemplificar
   remove(animals: Animal[], animal: Animal): Animal[] {
@@ -24,5 +37,13 @@ export class ListService {
     }
 
     return newArrayAnimals;
+  }
+
+  getAll(): Observable<Animal[]> {
+    return this.http.get<Animal[]>(this.apiUrl);
+  }
+
+  getInformation(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.apiUrlPosts);
   }
 }

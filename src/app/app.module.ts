@@ -16,6 +16,8 @@ import { ListRenderComponent } from './components/list-render/list-render.compon
 import { PipesComponent } from './components/pipes/pipes.component';
 import { TwoWayBidingComponent } from './components/two-way-biding/two-way-biding.component';
 import { RouterComponent } from './components/router/router.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ListHttpComponent } from './components/list-http/list-http.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +34,9 @@ import { RouterComponent } from './components/router/router.component';
     PipesComponent,
     TwoWayBidingComponent,
     RouterComponent,
+    ListHttpComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

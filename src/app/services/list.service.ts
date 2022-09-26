@@ -33,6 +33,11 @@ export class ListService {
   }
 
   // normalmente seria uma requisição, mas isso é pra exemplificar
+  removeAnimalList(id: number) {
+    return this.http.delete<AnimalList>(`${this.apiUrl}/${id}`);
+  }
+
+  // normalmente seria uma requisição, mas isso é pra exemplificar
   add(animals: Animal[], animal: Animal): Animal[] {
     let newArrayAnimals: Animal[] = animals;
     if (animal.name !== '' && animal.age !== 0 && animal.type !== '') {

@@ -1,9 +1,12 @@
 <div class="class cut">
   <h2>Lista com requisição http</h2>
   <br />
-  <p *ngFor="let animal of animals">
-    nome do animal:
-    <a routerLink="/list/{{ animal.id }}"> {{ animal.name }}</a>
-  </p>
+  <div *ngFor="let animal of animals">
+    <p>
+      nome do animal:
+      <a routerLink="/list/{{ animal.id }}"> {{ animal.name }}</a>
+    </p>
+    <button (click)="removeAnimal(animal)">delete</button>
+  </div>
   <p *ngFor="let post of posts">nome do animal: {{ post.title }}</p>
 </div>

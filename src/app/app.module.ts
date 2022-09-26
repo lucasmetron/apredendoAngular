@@ -18,6 +18,7 @@ import { TwoWayBidingComponent } from './components/two-way-biding/two-way-bidin
 import { RouterComponent } from './components/router/router.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListHttpComponent } from './components/list-http/list-http.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ListHttpComponent } from './components/list-http/list-http.component';
     TwoWayBidingComponent,
     RouterComponent,
     ListHttpComponent,
+    ItemDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

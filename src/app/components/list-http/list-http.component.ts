@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Animal } from 'src/app/Animal';
 import { ListService } from 'src/app/services/list.service';
 
 interface Post {
@@ -9,13 +8,20 @@ interface Post {
   body: string;
 }
 
+interface AnimalList {
+  id: number;
+  name: string;
+  type: string;
+  age: number;
+}
+
 @Component({
   selector: 'app-list-http',
   templateUrl: './list-http.component.html',
   styleUrls: ['./list-http.component.css'],
 })
 export class ListHttpComponent implements OnInit {
-  animals: Animal[] = [];
+  animals: AnimalList[] = [];
   posts: Post[] = [];
 
   constructor(private listService: ListService) {

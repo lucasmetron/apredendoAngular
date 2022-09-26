@@ -11,6 +11,13 @@ interface Post {
   body: string;
 }
 
+interface AnimalList {
+  id: number;
+  name: string;
+  type: string;
+  age: number;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -39,11 +46,16 @@ export class ListService {
     return newArrayAnimals;
   }
 
-  getAll(): Observable<Animal[]> {
-    return this.http.get<Animal[]>(this.apiUrl);
+  getAll(): Observable<AnimalList[]> {
+    return this.http.get<AnimalList[]>(this.apiUrl);
   }
 
   getInformation(): Observable<Post[]> {
     return this.http.get<Post[]>(this.apiUrlPosts);
+  }
+
+  // aqui fazemos a requisição de acordo com o id que chegar
+  getItem(id: number): Observable<AnimalList> {
+    return this.http.get<AnimalList>(`${this.apiUrl}/${id}`);
   }
 }
